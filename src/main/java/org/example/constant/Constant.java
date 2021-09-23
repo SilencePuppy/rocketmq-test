@@ -24,4 +24,7 @@ public class Constant {
     public static final String CONSUMER_GROUP_FOR_SYNC_TOPIC = "consumerGroupForSyncTopic";
     public static final String CONSUMER_GROUP_FOR_ASYNC_TOPIC = "consumerGroupForASyncTopic";
     public static final String CONSUMER_GROUP_FOR_ONE_WAY_TOPIC = "consumerGroupForOneWayTopic";
+
+    public static final String SEQ_PRODUCER_GROUP = "seqProducerGroup";
+    public static final String SEQ_MSG_TOPIC = "seqMsgTopic";
 }
