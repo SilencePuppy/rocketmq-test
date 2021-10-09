@@ -28,6 +28,7 @@ public class SyncProducer {
         for (int i = 0; i < 10; i++) {
             byte[] msgBody = ("Hi," + i).getBytes();
             Message message = new Message(Constant.SYNC_MSG_TOPIC,null,msgBody);
+            // 同步阻塞等待
             SendResult sendResult = defaultMQProducer.send(message);
             System.out.println(sendResult);
         }

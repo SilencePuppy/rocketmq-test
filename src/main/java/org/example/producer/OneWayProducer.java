@@ -19,7 +19,7 @@ public class OneWayProducer {
 
         defaultMQProducer.start();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <1; i++) {
             byte[] msg = ("Hi one way "+i).getBytes();
             Message  message= new Message(Constant.ONE_WAY_MSG_TOPIC,null,msg);
             defaultMQProducer.sendOneway(message);

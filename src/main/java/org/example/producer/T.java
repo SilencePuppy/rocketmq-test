@@ -7,5 +7,7 @@ package org.example.producer;
  */
 public class T {
     public static void main(String[] args) {
+        String t = null;
+        System.out.println("模块"+    t);
     }
 }
