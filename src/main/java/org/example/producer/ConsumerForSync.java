@@ -43,7 +43,7 @@ public class ConsumerForSync {
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
-                    return ConsumeConcurrentlyStatus.RECONSUME_LATER;
+                    return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
