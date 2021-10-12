@@ -27,4 +27,10 @@ public class Constant {
 
     public static final String SEQ_PRODUCER_GROUP = "seqProducerGroup";
     public static final String SEQ_MSG_TOPIC = "seqMsgTopic";
+
+    public static final String TRANSACTION_PRODUCER_GROUP = "transactionProducerGroup";
+
+    public static final String TRANSACTION_MSG_TOPIC = "transactionMsgTopic";
+
+    public static final String TRANSACTION_CONSUMER_GROUP = "transactionConsumerGroup";
 }

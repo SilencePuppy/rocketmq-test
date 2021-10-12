@@ -1,6 +1,7 @@
 package org.example.producer;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
+import org.apache.rocketmq.client.consumer.MessageSelector;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
@@ -22,9 +23,11 @@ public class ConsumerForSync {
 
         defaultMQPushConsumer.setNamesrvAddr(Constant.NAME_SRV_ADDR);
 
-        defaultMQPushConsumer.subscribe(Constant.SYNC_MSG_TOPIC, "*");
+        defaultMQPushConsumer.subscribe(Constant.SYNC_MSG_TOPIC, MessageSelector.bySql("(TAGS is not null and TAGS " +
+                "in ('TagA','TagB') and (name is not null and age between 0 and 3))"));
 
         defaultMQPushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
+
         // 设置为广播模式
         // defaultMQPushConsumer.setMessageModel(MessageModel.BROADCASTING);
         // defaultMQPushConsumer.setMessageModel(MessageModel.CLUSTERING); 默认就是集群模式
